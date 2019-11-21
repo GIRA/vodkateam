@@ -24,7 +24,16 @@ void loop()  {
         estado = BT.read();
         Serial.println(estado);
       }
- 
+ if(estado=='S')//
+  {
+  motor1.run(RELEASE);     
+  motor2.run(RELEASE);
+  }
+  if(estado=='K')//
+  {
+  motor1.run(RELEASE);     
+  motor2.run(RELEASE);
+  }
   if(estado=='A'){  //Acelera
             
   motor1.run(FORWARD);      // turn it on going forward
@@ -46,7 +55,7 @@ void loop()  {
   if(estado=='C'){  //Izquierda
   motor1.run(FORWARD);      // DERECHA
   motor2.run(RELEASE);      // DERECHA
-  Serial.println("izquierda"); 
+  //Serial.println("izquierda"); 
   }
   if(estado=='B'){  //Frenar     
   motor1.run(RELEASE);      // stopped
